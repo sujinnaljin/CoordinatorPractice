@@ -13,6 +13,9 @@
 		3B655FB4269602B800EACF86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FB2269602B800EACF86 /* Main.storyboard */; };
 		3B655FB6269602BB00EACF86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FB5269602BB00EACF86 /* Assets.xcassets */; };
 		3B655FB9269602BB00EACF86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FB7269602BB00EACF86 /* LaunchScreen.storyboard */; };
+		3B655FC32696035600EACF86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC22696035600EACF86 /* UIViewController+Extension.swift */; };
+		3B655FC52696036800EACF86 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC42696036800EACF86 /* SignInViewController.swift */; };
+		3B655FC72696037000EACF86 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC62696037000EACF86 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3B655FB5269602BB00EACF86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B655FB8269602BB00EACF86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B655FBA269602BB00EACF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B655FC22696035600EACF86 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3B655FC42696036800EACF86 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		3B655FC62696037000EACF86 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				3B655FB5269602BB00EACF86 /* Assets.xcassets */,
 				3B655FB7269602BB00EACF86 /* LaunchScreen.storyboard */,
 				3B655FBA269602BB00EACF86 /* Info.plist */,
+				3B655FC22696035600EACF86 /* UIViewController+Extension.swift */,
+				3B655FC42696036800EACF86 /* SignInViewController.swift */,
+				3B655FC62696037000EACF86 /* SettingViewController.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -137,9 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B655FC32696035600EACF86 /* UIViewController+Extension.swift in Sources */,
 				3B655FB1269602B800EACF86 /* ViewController.swift in Sources */,
 				3B655FAD269602B800EACF86 /* AppDelegate.swift in Sources */,
+				3B655FC52696036800EACF86 /* SignInViewController.swift in Sources */,
 				3B655FAF269602B800EACF86 /* SceneDelegate.swift in Sources */,
+				3B655FC72696037000EACF86 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
