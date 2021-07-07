@@ -9,18 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var coordinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
+        coordinator = Coordinator(navigationController: self.navigationController)
     }
     
     @IBAction func touchSignIn(_ sender: Any) {
-        let signIn = SignInViewController.instantiate()
-        self.navigationController?.pushViewController(signIn, animated: true)
+        coordinator?.goSingIn()
     }
 
     @IBAction func touchSetting(_ sender: Any) {
-        let setting = SettingViewController.instantiate()
-        self.navigationController?.pushViewController(setting, animated: true)
+        coordinator?.goSetting()
     }
 }
 

@@ -16,6 +16,7 @@
 		3B655FC32696035600EACF86 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC22696035600EACF86 /* UIViewController+Extension.swift */; };
 		3B655FC52696036800EACF86 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC42696036800EACF86 /* SignInViewController.swift */; };
 		3B655FC72696037000EACF86 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC62696037000EACF86 /* SettingViewController.swift */; };
+		3B655FC92696043800EACF86 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FC82696043800EACF86 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3B655FC22696035600EACF86 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3B655FC42696036800EACF86 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3B655FC62696037000EACF86 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3B655FC82696043800EACF86 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3B655FC22696035600EACF86 /* UIViewController+Extension.swift */,
 				3B655FC42696036800EACF86 /* SignInViewController.swift */,
 				3B655FC62696037000EACF86 /* SettingViewController.swift */,
+				3B655FC82696043800EACF86 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				3B655FC52696036800EACF86 /* SignInViewController.swift in Sources */,
 				3B655FAF269602B800EACF86 /* SceneDelegate.swift in Sources */,
 				3B655FC72696037000EACF86 /* SettingViewController.swift in Sources */,
+				3B655FC92696043800EACF86 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
