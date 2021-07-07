@@ -14,13 +14,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchSignIn(_ sender: Any) {
-        let signInCoordinator = SignInCoordinator(navigationController: navigationController)
-        signInCoordinator.start()
+        coordinator?.performTransition(to: .signIn)
     }
 
     @IBAction func touchSetting(_ sender: Any) {
-        let settingCoordinator = SettingCoordinator(navigationController: navigationController)
-        settingCoordinator.start()
+        coordinator?.performTransition(to: .setting)
     }
 }
 

@@ -12,6 +12,11 @@ protocol Coordinator {
     func start()
 }
 
+enum Transition {
+    case signIn
+    case setting
+}
+
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController?
     
@@ -23,6 +28,17 @@ class MainCoordinator: Coordinator {
         let main = ViewController.instantiate()
         main.coordinator = self
         navigationController?.pushViewController(main, animated: true)
+    }
+    
+    func performTransition(to transition: Transition) {
+        var coordinator: Coordinator?
+        switch transition {
+        case .signIn:
+            coordinator = SignInCoordinator(navigationController: navigationController)
+        case .setting:
+            coordinator = SettingCoordinator(navigationController: navigationController)
+        }
+        coordinator?.start()
     }
 }
 
@@ -38,6 +54,17 @@ class SignInCoordinator: Coordinator {
         signIn.coordinator = self
         navigationController?.pushViewController(signIn, animated: true)
     }
+    
+    func performTransition(to transition: Transition) {
+        var coordinator: Coordinator?
+        switch transition {
+        case .setting:
+            coordinator = SettingCoordinator(navigationController: navigationController)
+        default:
+            break
+        }
+        coordinator?.start()
+    }
 }
 
 
@@ -52,5 +79,16 @@ class SettingCoordinator: Coordinator {
         let setting = SettingViewController.instantiate()
         setting.coordinator = self
         navigationController?.pushViewController(setting, animated: true)
+    }
+    
+    func performTransition(to transition: Transition) {
+        var coordinator: Coordinator?
+        switch transition {
+        case .signIn:
+            coordinator = SignInCoordinator(navigationController: navigationController)
+        default:
+            break
+        }
+        coordinator?.start()
     }
 }

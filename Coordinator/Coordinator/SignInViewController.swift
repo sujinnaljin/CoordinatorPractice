@@ -10,7 +10,6 @@ import UIKit
 class SignInViewController: UIViewController {
     var coordinator: SignInCoordinator?
     @IBAction func touchSetting(_ sender: Any) {
-        let settingCoordinator = SettingCoordinator(navigationController: navigationController)
-        settingCoordinator.start()
+        coordinator?.performTransition(to: .setting)
     }
 }
