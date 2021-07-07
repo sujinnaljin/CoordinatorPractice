@@ -8,18 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var coordinator: Coordinator?
+    var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func touchSignIn(_ sender: Any) {
-        coordinator?.goSingIn()
+        let signInCoordinator = SignInCoordinator(navigationController: navigationController)
+        signInCoordinator.start()
     }
 
     @IBAction func touchSetting(_ sender: Any) {
-        coordinator?.goSetting()
+        let settingCoordinator = SettingCoordinator(navigationController: navigationController)
+        settingCoordinator.start()
     }
 }
 

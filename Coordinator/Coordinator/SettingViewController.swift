@@ -8,9 +8,9 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-    var coordinator: Coordinator?
-    
+    var coordinator: SettingCoordinator?
     @IBAction func touchSignIn(_ sender: Any) {
-        coordinator?.goSingIn()
+        let signInCoordinator = SignInCoordinator(navigationController: navigationController)
+        signInCoordinator.start()
     }
 }

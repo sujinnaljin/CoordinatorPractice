@@ -9,7 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var coordinator: Coordinator?
+    var coordinator: MainCoordinator?
     var window: UIWindow?
 
 
@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appWindow.windowScene = windowScene
         
         let navController = UINavigationController()
-        coordinator = Coordinator(navigationController: navController)
+        coordinator = MainCoordinator(navigationController: navController)
         coordinator?.start()
         
         appWindow.rootViewController = navController

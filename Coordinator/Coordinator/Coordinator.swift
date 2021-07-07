@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Coordinator {
+class MainCoordinator {
     let navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
@@ -19,14 +19,31 @@ class Coordinator {
         main.coordinator = self
         navigationController?.pushViewController(main, animated: true)
     }
+}
+
+class SignInCoordinator {
+    let navigationController: UINavigationController?
     
-    func goSingIn() {
+    init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
         let signIn = SignInViewController.instantiate()
         signIn.coordinator = self
         navigationController?.pushViewController(signIn, animated: true)
     }
+}
+
+
+class SettingCoordinator {
+    let navigationController: UINavigationController?
     
-    func goSetting() {
+    init(navigationController: UINavigationController?) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
         let setting = SettingViewController.instantiate()
         setting.coordinator = self
         navigationController?.pushViewController(setting, animated: true)
