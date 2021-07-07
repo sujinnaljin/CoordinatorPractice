@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     var coordinator: Coordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
-        coordinator = Coordinator(navigationController: self.navigationController)
     }
     
     @IBAction func touchSignIn(_ sender: Any) {

@@ -14,6 +14,12 @@ class Coordinator {
         self.navigationController = navigationController
     }
     
+    func start() {
+        let main = ViewController.instantiate()
+        main.coordinator = self
+        navigationController?.pushViewController(main, animated: true)
+    }
+    
     func goSingIn() {
         let signIn = SignInViewController.instantiate()
         signIn.coordinator = self
