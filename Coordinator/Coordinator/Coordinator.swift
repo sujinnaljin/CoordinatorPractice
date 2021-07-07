@@ -16,11 +16,13 @@ class Coordinator {
     
     func goSingIn() {
         let signIn = SignInViewController.instantiate()
+        signIn.coordinator = self
         navigationController?.pushViewController(signIn, animated: true)
     }
     
     func goSetting() {
         let setting = SettingViewController.instantiate()
+        setting.coordinator = self
         navigationController?.pushViewController(setting, animated: true)
     }
 }

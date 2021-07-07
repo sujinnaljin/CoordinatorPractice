@@ -57,6 +57,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afl-Vd-T34">
+                                <rect key="frame" x="175" y="495" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="stgnin"/>
+                                <connections>
+                                    <action selector="touchSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cv-Pd-7X7"/>
+                                    <action selector="touchSignIn:" destination="pLo-G3-zdt" eventType="touchUpInside" id="cxT-Se-0Od"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fjd-nh-i4C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,6 +90,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-df-WQI">
+                                <rect key="frame" x="183" y="475" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="setting"/>
+                                <connections>
+                                    <action selector="touchSetting:" destination="XHC-9U-fzA" eventType="touchUpInside" id="Lv4-kk-wSR"/>
+                                    <action selector="touchSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wf6-KL-hw1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="It8-F2-syG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

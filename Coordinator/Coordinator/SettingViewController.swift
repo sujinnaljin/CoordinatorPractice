@@ -8,5 +8,9 @@
 import UIKit
 
 class SettingViewController: UIViewController {
+    var coordinator: Coordinator?
     
+    @IBAction func touchSignIn(_ sender: Any) {
+        coordinator?.goSingIn()
+    }
 }
