@@ -7,8 +7,13 @@
 
 import UIKit
 
-class MainCoordinator {
-    let navigationController: UINavigationController?
+protocol Coordinator {
+    var navigationController: UINavigationController? { get set }
+    func start()
+}
+
+class MainCoordinator: Coordinator {
+    var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -21,8 +26,8 @@ class MainCoordinator {
     }
 }
 
-class SignInCoordinator {
-    let navigationController: UINavigationController?
+class SignInCoordinator: Coordinator {
+    var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
@@ -36,8 +41,8 @@ class SignInCoordinator {
 }
 
 
-class SettingCoordinator {
-    let navigationController: UINavigationController?
+class SettingCoordinator: Coordinator {
+    var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
