@@ -7,9 +7,54 @@
 
 import UIKit
 
-protocol Coordinator {
-    var navigationController: UINavigationController? { get set }
+protocol Coordinator: AnyObject {
+    var navigationController: UINavigationController { get set }
+    var parentCoordinator: Coordinator? { get set }
+    
     func start()
+    func start(coordinator: Coordinator)
+    func didFinish(coordinator: Coordinator)
+    func removeChildCoordinators()
+}
+
+class BaseCoordinator: Coordinator {
+    var childCoordinators: [Coordinator] = []
+    var parentCoordinator: Coordinator?
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
+        fatalError("Start method must be implemented")
+    }
+    
+    func start(coordinator: Coordinator) {
+        childCoordinators.append(coordinator) //addDependency
+        coordinator.parentCoordinator = self
+        coordinator.start()
+    }
+    
+    //자기 자신 pop 됐을때 parentCoordinator?.didFinish(coordinator: self) 이런식으로
+    func didFinish(coordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex(where: { $0 === coordinator }) {
+            childCoordinators.remove(at: index)
+        }
+    }
+    
+    //다른걸로 넘어갈때 다른 vc 지우는 용도
+    func removeChildCoordinators() {
+        childCoordinators.forEach { $0.removeChildCoordinators() }
+        childCoordinators.removeAll()
+    }
+}
+
+class AppCoordinator: BaseCoordinator {
+    override func start() {
+        let coordinator = MainCoordinator(navigationController: navigationController)
+        start(coordinator: coordinator) //그럼 처음에 자기 자신을 갖고 있는거지
+    }
 }
 
 enum Transition {
@@ -17,78 +62,65 @@ enum Transition {
     case setting
 }
 
-class MainCoordinator: Coordinator {
-    var navigationController: UINavigationController?
-    
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
+class MainCoordinator: BaseCoordinator {
+
+    override func start() {
         let main = ViewController.instantiate()
         main.coordinator = self
-        navigationController?.pushViewController(main, animated: true)
+        navigationController.pushViewController(main, animated: true)
     }
     
     func performTransition(to transition: Transition) {
-        var coordinator: Coordinator?
         switch transition {
         case .signIn:
-            coordinator = SignInCoordinator(navigationController: navigationController)
+            removeChildCoordinators()
+            let coordinator = SignInCoordinator(navigationController: navigationController)
+            start(coordinator: coordinator)
         case .setting:
-            coordinator = SettingCoordinator(navigationController: navigationController)
+            removeChildCoordinators()
+            let coordinator = SettingCoordinator(navigationController: navigationController)
+            start(coordinator: coordinator)
         }
-        coordinator?.start()
     }
 }
 
-class SignInCoordinator: Coordinator {
-    var navigationController: UINavigationController?
+class SignInCoordinator: BaseCoordinator {
     
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
+    override func start() {
         let signIn = SignInViewController.instantiate()
         signIn.coordinator = self
-        navigationController?.pushViewController(signIn, animated: true)
+        navigationController.pushViewController(signIn, animated: true)
     }
     
     func performTransition(to transition: Transition) {
-        var coordinator: Coordinator?
         switch transition {
         case .setting:
-            coordinator = SettingCoordinator(navigationController: navigationController)
+            removeChildCoordinators()
+            let coordinator = SettingCoordinator(navigationController: navigationController)
+            start(coordinator: coordinator)
         default:
             break
         }
-        coordinator?.start()
     }
 }
 
-
-class SettingCoordinator: Coordinator {
-    var navigationController: UINavigationController?
+class SettingCoordinator: BaseCoordinator {
+   
     
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
-    
-    func start() {
+    override func start() {
         let setting = SettingViewController.instantiate()
         setting.coordinator = self
-        navigationController?.pushViewController(setting, animated: true)
+        navigationController.pushViewController(setting, animated: true)
     }
     
     func performTransition(to transition: Transition) {
-        var coordinator: Coordinator?
         switch transition {
         case .signIn:
-            coordinator = SignInCoordinator(navigationController: navigationController)
+            removeChildCoordinators()
+            let coordinator = SignInCoordinator(navigationController: navigationController)
+            start(coordinator: coordinator)
         default:
             break
         }
-        coordinator?.start()
     }
 }

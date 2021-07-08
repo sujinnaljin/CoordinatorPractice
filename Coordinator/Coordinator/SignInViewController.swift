@@ -8,7 +8,7 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-    var coordinator: SignInCoordinator?
+    weak var coordinator: SignInCoordinator?
     @IBAction func touchSetting(_ sender: Any) {
         coordinator?.performTransition(to: .setting)
     }
