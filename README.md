@@ -156,3 +156,4 @@
 - [[디자인 패턴][swift] Coordinator pattern](https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-swift-coordinator-pattern-426a7628e2f4)
 - [Coordinator Pattern](https://velog.io/@ellyheetov/Coordinator-Pattern)
 - [Deeplink with coordinators](https://www.iamin.dev/Deeplink-with-coordinators/)
+- [How to use the coordinator pattern in iOS apps](https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps)
